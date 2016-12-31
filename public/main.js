@@ -1,5 +1,7 @@
 window.onload = init;
 
+var badHeaderException = "Bad File Header. File is either not a midi file or unsupported. Get in contact if you get this message for a valid midi file"
+var outOfRangeException = "Notes in this midi file are out of the supported range. <br> Keep Notes on the white notes between C1-C3"
 
 var timeScale = 0.05;
 var noteStart = 60;
@@ -54,11 +56,9 @@ function readSingleFile(e) {
     if(success){
       div.innerHTML = "<h2>Success!</h2> Your score will download as a PDF. It is recommended to print with thick cardstock";
     } else {
-      div.innerHTML = "<h2>Ack!</h2>" + logit +"<br> Ensure your file is a proper midi file and only contains white notes between C1-C3";
+      div.innerHTML = "<h2>Ack!</h2>" + logit
     }
     document.getElementById("error").appendChild(div);
-
-    console.log("APPENDED")
 
   };
 
@@ -68,11 +68,15 @@ function readSingleFile(e) {
 
 function midiToScore(e){
 
-    var midiFile = new MIDIFile(e.target.result);
+    try{
+      var midiFile = new MIDIFile(e.target.result);
+    } catch ( err ){
+      throw badHeaderException;
+    }
 
       var events = midiFile.getMidiEvents();
       if(events.length === 0){
-        throw "no midi events"
+        throw "No Identifiable midi events in this file"
       }
 
       doc = new PDFDocument
@@ -131,12 +135,10 @@ function midiToScore(e){
           var noteY = ( _e.playTime * timeScale + yoff);
 
           if(noteX < 0 || noteX > laneWidth){
-            throw "Notes out of range"
+            throw outOfRangeException;
           }
 
           if( noteY > (laneHeight)){
-
-            console.log( "Trimming " + Math.floor(noteY) + " to Trim Height: " + Math.floor((laneHeight)));
 
             var laneWidth = staffWidth+gutterWidth*2;
             xp += laneWidth;
