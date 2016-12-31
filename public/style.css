@@ -1,0 +1,101 @@
+html, body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #ff75a7;
+}
+
+.centered-div {
+  color: white;
+  position: relative;
+  width:500px;
+  text-align: center;
+  font-family: 'Open Sans',serif;
+  border: 1px;
+  border-color: black;
+  margin: 0 auto;
+
+}
+
+#content {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+#header{
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #22deff;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    width: 220px;
+    height: 40px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #22deff;
+    color: #FFFFFF;
+    display:inline-block;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+#error-pane {
+  color: #FFFFFF;
+  border: thick dotted white;
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+
+h1 {
+  font-size: 70px;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  padding-bottom: 10px;
+}
+
+span {
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+iframe{
+  margin-top: 20px;
+}
+
+ol{
+  text-align: left;
+}
+li{
+  margin: 5px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

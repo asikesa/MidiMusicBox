@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+
+  <body>
+
+    <div id="header" class="centered-div">
+    <h1>MidiMusicBox</h1>
+    <p>Turn midi files into printable scores for DIY music boxes</p>
+    </div>
+
+    <div id="content" class="centered-div">
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-olhpDi0ZhE" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div id="error">
+      </div>
+      <div>
+        <div class="fileUpload btn btn-primary">
+            <a href="/how"><span>How To</span></a>
+        </div>
+
+        <div class="fileUpload btn btn-primary">
+            <span>Select Midi File</span>
+            <input type="file" class="upload" id="loader" />
+        </div>
+      </div>
+
+      <div id ="inner" class = "centered-div">
+        <a target="_blank" href="https://www.amazon.com/gp/product/B000HAUEFY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000HAUEFY&linkCode=as2&tag=avan04-20&linkId=4171f37b8daaef3bd0b0ca124c3a0c31">Don't have a music box? Get one here!</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=avan04-20&l=am2&o=1&a=B000HAUEFY" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+      </div>
+    </div>
+
+  </body>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="blob-stream.js"></script>
+  <script src="FileSaver.js"></script>
+  <script src="pdfkit.js"></script>
+  <script src="MIDIEvents.js"></script>
+  <script src="MIDIFile.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</html>
